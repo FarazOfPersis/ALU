@@ -60,7 +60,7 @@
     <a name="circuit" val="main" />
     <a name="circuitnamedboxfixedsize" val="true" />
     <a name="simulationFrequency" val="1.0" />
-    <comp lib="0" loc="(1010,1020)" name="Tunnel">
+    <boardmap boardname="ALCHITRY_AU_IO"><mc key="/aluop" vconst="0" /><mc key="/a" vconst="0" /><mc key="/b" vconst="0" /><mc key="/output_inverted" vconst="0" /><mc key="/output_inc" vconst="0" /><mc key="/clk" vconst="0" /><mc key="/rst" vconst="0" /><mc key="/res_high" open="open" /><mc key="/res_low" open="open" /><mc key="/done" open="open" /></boardmap><comp lib="0" loc="(1010,1020)" name="Tunnel">
       <a name="label" val="done_MULT" />
     </comp>
     <comp lib="0" loc="(1020,1080)" name="Splitter">
@@ -152,6 +152,36 @@
       <a name="label" val="MUL_LOW" />
       <a name="width" val="32" />
     </comp>
+    <comp lib="0" loc="(1080,1610)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="a" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1080,1640)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="b" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1080,1690)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="a" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1080,1720)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="b" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1090,1510)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="a" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1090,1540)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="b" />
+      <a name="width" val="32" />
+    </comp>
     <comp lib="0" loc="(1110,310)" name="Tunnel">
       <a name="facing" val="north" />
       <a name="label" val="inc" />
@@ -170,6 +200,18 @@
       <a name="label" val="res_low" />
       <a name="output" val="true" />
       <a name="radix" val="16" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1220,1630)" name="Tunnel">
+      <a name="label" val="OR_LOW" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1220,1710)" name="Tunnel">
+      <a name="label" val="XOR_LOW" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(1230,1530)" name="Tunnel">
+      <a name="label" val="AND_LOW" />
       <a name="width" val="32" />
     </comp>
     <comp lib="0" loc="(140,1100)" name="Constant" />
@@ -331,6 +373,11 @@
       <a name="label" val="DIV_LOW" />
       <a name="width" val="32" />
     </comp>
+    <comp lib="0" loc="(570,310)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="OR_LOW" />
+      <a name="width" val="32" />
+    </comp>
     <comp lib="0" loc="(570,570)" name="Tunnel">
       <a name="facing" val="east" />
       <a name="label" val="ADD_HIGH" />
@@ -351,6 +398,16 @@
       <a name="label" val="SUB_LOW" />
       <a name="width" val="32" />
     </comp>
+    <comp lib="0" loc="(580,280)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="AND_LOW" />
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="0" loc="(580,340)" name="Tunnel">
+      <a name="facing" val="east" />
+      <a name="label" val="XOR_LOW" />
+      <a name="width" val="32" />
+    </comp>
     <comp lib="0" loc="(590,1560)" name="Constant">
       <a name="value" val="0x2" />
       <a name="width" val="4" />
@@ -366,6 +423,10 @@
     <comp lib="0" loc="(700,1250)" name="Tunnel">
       <a name="facing" val="east" />
       <a name="label" val="clk" />
+    </comp>
+    <comp lib="0" loc="(700,630)" name="Constant">
+      <a name="value" val="0x0" />
+      <a name="width" val="32" />
     </comp>
     <comp lib="0" loc="(710,1270)" name="Tunnel">
       <a name="facing" val="east" />
@@ -450,6 +511,15 @@
       <a name="label" val="invert" />
     </comp>
     <comp lib="0" loc="(990,340)" name="Constant">
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="1" loc="(1200,1630)" name="OR Gate">
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="1" loc="(1210,1530)" name="AND Gate">
+      <a name="width" val="32" />
+    </comp>
+    <comp lib="1" loc="(1210,1710)" name="XOR Gate">
       <a name="width" val="32" />
     </comp>
     <comp lib="1" loc="(130,1140)" name="NOT Gate">
@@ -568,11 +638,23 @@
     <wire from="(1070,280)" to="(1070,330)" />
     <wire from="(1070,280)" to="(1100,280)" />
     <wire from="(1070,700)" to="(1070,720)" />
+    <wire from="(1080,1610)" to="(1150,1610)" />
+    <wire from="(1080,1640)" to="(1140,1640)" />
+    <wire from="(1080,1690)" to="(1150,1690)" />
+    <wire from="(1080,1720)" to="(1140,1720)" />
+    <wire from="(1090,1510)" to="(1160,1510)" />
+    <wire from="(1090,1540)" to="(1150,1540)" />
     <wire from="(1090,680)" to="(1130,680)" />
     <wire from="(110,1110)" to="(110,1120)" />
     <wire from="(110,1120)" to="(140,1120)" />
     <wire from="(1110,290)" to="(1110,310)" />
     <wire from="(1130,270)" to="(1170,270)" />
+    <wire from="(1140,1640)" to="(1140,1650)" />
+    <wire from="(1140,1650)" to="(1150,1650)" />
+    <wire from="(1140,1720)" to="(1140,1730)" />
+    <wire from="(1140,1730)" to="(1150,1730)" />
+    <wire from="(1150,1540)" to="(1150,1550)" />
+    <wire from="(1150,1550)" to="(1160,1550)" />
     <wire from="(120,1010)" to="(120,1020)" />
     <wire from="(120,1010)" to="(150,1010)" />
     <wire from="(120,1380)" to="(120,1520)" />
@@ -581,6 +663,10 @@
     <wire from="(120,1640)" to="(130,1640)" />
     <wire from="(120,980)" to="(120,990)" />
     <wire from="(120,990)" to="(150,990)" />
+    <wire from="(1200,1630)" to="(1220,1630)" />
+    <wire from="(1200,1710)" to="(1210,1710)" />
+    <wire from="(1210,1530)" to="(1230,1530)" />
+    <wire from="(1210,1710)" to="(1220,1710)" />
     <wire from="(130,1140)" to="(140,1140)" />
     <wire from="(140,1140)" to="(150,1140)" />
     <wire from="(170,260)" to="(190,260)" />
@@ -638,10 +724,13 @@
     <wire from="(570,1540)" to="(590,1540)" />
     <wire from="(570,220)" to="(610,220)" />
     <wire from="(570,250)" to="(620,250)" />
+    <wire from="(570,310)" to="(640,310)" />
     <wire from="(570,570)" to="(760,570)" />
     <wire from="(570,600)" to="(580,600)" />
     <wire from="(580,160)" to="(770,160)" />
     <wire from="(580,190)" to="(600,190)" />
+    <wire from="(580,280)" to="(630,280)" />
+    <wire from="(580,340)" to="(650,340)" />
     <wire from="(580,590)" to="(580,600)" />
     <wire from="(580,590)" to="(770,590)" />
     <wire from="(590,600)" to="(590,630)" />
@@ -656,6 +745,12 @@
     <wire from="(620,200)" to="(780,200)" />
     <wire from="(630,1550)" to="(710,1550)" />
     <wire from="(630,1670)" to="(680,1670)" />
+    <wire from="(630,210)" to="(630,280)" />
+    <wire from="(630,210)" to="(780,210)" />
+    <wire from="(640,220)" to="(640,310)" />
+    <wire from="(640,220)" to="(780,220)" />
+    <wire from="(650,230)" to="(650,340)" />
+    <wire from="(650,230)" to="(780,230)" />
     <wire from="(680,1040)" to="(770,1040)" />
     <wire from="(680,1590)" to="(680,1670)" />
     <wire from="(680,1590)" to="(710,1590)" />
@@ -663,8 +758,14 @@
     <wire from="(70,1340)" to="(70,1410)" />
     <wire from="(70,1410)" to="(300,1410)" />
     <wire from="(700,1250)" to="(770,1250)" />
+    <wire from="(700,630)" to="(710,630)" />
     <wire from="(710,1270)" to="(770,1270)" />
     <wire from="(710,1550)" to="(710,1560)" />
+    <wire from="(710,620)" to="(710,630)" />
+    <wire from="(710,620)" to="(770,620)" />
+    <wire from="(710,630)" to="(710,640)" />
+    <wire from="(710,630)" to="(770,630)" />
+    <wire from="(710,640)" to="(770,640)" />
     <wire from="(720,1020)" to="(770,1020)" />
     <wire from="(730,1060)" to="(770,1060)" />
     <wire from="(730,1090)" to="(760,1090)" />
@@ -672,9 +773,6 @@
     <wire from="(750,1220)" to="(750,1230)" />
     <wire from="(750,1230)" to="(770,1230)" />
     <wire from="(750,1300)" to="(770,1300)" />
-    <wire from="(750,620)" to="(770,620)" />
-    <wire from="(750,630)" to="(770,630)" />
-    <wire from="(750,640)" to="(770,640)" />
     <wire from="(750,650)" to="(770,650)" />
     <wire from="(750,660)" to="(770,660)" />
     <wire from="(750,670)" to="(770,670)" />
@@ -688,8 +786,6 @@
     <wire from="(760,1080)" to="(770,1080)" />
     <wire from="(760,1530)" to="(760,1570)" />
     <wire from="(760,1530)" to="(790,1530)" />
-    <wire from="(760,210)" to="(780,210)" />
-    <wire from="(760,220)" to="(780,220)" />
     <wire from="(760,240)" to="(780,240)" />
     <wire from="(760,250)" to="(780,250)" />
     <wire from="(760,260)" to="(780,260)" />
@@ -749,7 +845,7 @@
     <wire from="(990,1270)" to="(1010,1270)" />
     <wire from="(990,260)" to="(1020,260)" />
     <wire from="(990,340)" to="(1030,340)" />
-  <boardmap boardname="ALCHITRY_AU_IO"><mc key="/aluop" vconst="0" /><mc key="/a" vconst="0" /><mc key="/b" vconst="0" /><mc key="/output_inverted" vconst="0" /><mc key="/output_inc" vconst="0" /><mc key="/clk" vconst="0" /><mc key="/rst" vconst="0" /><mc key="/res_high" open="open" /><mc key="/res_low" open="open" /><mc key="/done" open="open" /></boardmap></circuit>
+  </circuit>
   <circuit name="counter2">
     <a name="appearance" val="logisim_evolution" />
     <a name="circuit" val="counter2" />
@@ -802,7 +898,7 @@
     <comp lib="0" loc="(200,580)" name="Pin">
       <a name="appearance" val="NewPins" />
       <a name="label" val="dividend" />
-      <a name="radix" val="10unsigned" />
+      <a name="radix" val="16" />
       <a name="width" val="32" />
     </comp>
     <comp lib="0" loc="(240,140)" name="Constant">
@@ -811,7 +907,7 @@
     <comp lib="0" loc="(280,790)" name="Pin">
       <a name="appearance" val="NewPins" />
       <a name="label" val="divisor" />
-      <a name="radix" val="10unsigned" />
+      <a name="radix" val="16" />
       <a name="width" val="32" />
     </comp>
     <comp lib="0" loc="(520,220)" name="Constant">
@@ -969,7 +1065,7 @@
       <a name="facing" val="west" />
       <a name="label" val="remainder" />
       <a name="output" val="true" />
-      <a name="radix" val="10signed" />
+      <a name="radix" val="16" />
       <a name="width" val="32" />
     </comp>
     <comp lib="0" loc="(90,140)" name="Pin">
@@ -985,7 +1081,7 @@
       <a name="facing" val="west" />
       <a name="label" val="quotient" />
       <a name="output" val="true" />
-      <a name="radix" val="10unsigned" />
+      <a name="radix" val="16" />
       <a name="width" val="32" />
     </comp>
     <comp lib="1" loc="(230,240)" name="NOT Gate" />
@@ -1011,6 +1107,7 @@
     <comp lib="3" loc="(320,130)" name="Adder" />
     <comp lib="3" loc="(580,210)" name="Comparator" />
     <comp lib="3" loc="(610,720)" name="Comparator">
+      <a name="mode" val="unsigned" />
       <a name="width" val="32" />
     </comp>
     <comp lib="3" loc="(660,540)" name="Shifter">
