@@ -1176,7 +1176,9 @@
     <comp loc="(1000,2060)" name="ROT_R">
       <a name="label" val="Rotate_Right"/>
     </comp>
-    <comp loc="(1000,2260)" name="CL_Z"/>
+    <comp loc="(1000,2260)" name="CL_Z">
+      <a name="label" val="CLZ"/>
+    </comp>
     <comp loc="(360,1100)" name="CSA">
       <a name="label" val="SUB"/>
     </comp>
@@ -1189,7 +1191,9 @@
     <comp loc="(410,2020)" name="LSL">
       <a name="label" val="Logical_Shift_Left"/>
     </comp>
-    <comp loc="(410,2230)" name="CL_O"/>
+    <comp loc="(410,2230)" name="CL_O">
+      <a name="label" val="CLO"/>
+    </comp>
     <comp loc="(990,1020)" name="mul">
       <a name="label" val="Multiplier"/>
     </comp>
@@ -4224,6 +4228,11 @@
     <a name="circuit" val="ROT_R"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
+    <boardmap boardname="ALCHITRY_AU_IO">
+      <mc/>
+      <mc/>
+      <mc/>
+    </boardmap>
     <comp lib="0" loc="(1010,410)" name="Constant">
       <a name="value" val="0xffffffff"/>
       <a name="width" val="64"/>
@@ -5282,6 +5291,7 @@
     <a name="simulationFrequency" val="1.0"/>
     <comp lib="0" loc="(480,330)" name="Pin">
       <a name="appearance" val="NewPins"/>
+      <a name="label" val="a"/>
       <a name="radix" val="16"/>
       <a name="width" val="32"/>
     </comp>
@@ -5296,7 +5306,9 @@
     <comp lib="1" loc="(510,330)" name="NOT Gate">
       <a name="width" val="32"/>
     </comp>
-    <comp loc="(850,330)" name="CL_Z"/>
+    <comp loc="(850,330)" name="CL_Z">
+      <a name="label" val="CLZ"/>
+    </comp>
     <wire from="(510,330)" to="(630,330)"/>
   </circuit>
 </project>
